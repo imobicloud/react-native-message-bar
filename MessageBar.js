@@ -178,7 +178,9 @@ class MessageBar extends Component {
       animationType: props.animationType || def.animationType,
       
       /* Show the close button */
-      showCloseButton: props.showCloseButton || false
+      showCloseButton: props.showCloseButton || false,
+      renderCloseButton: props.renderCloseButton || () => null
+      
     }
   }
 
@@ -482,7 +484,7 @@ class MessageBar extends Component {
             </View>
           </View>
         </TouchableOpacity>
-        { this.state.showCloseButton && this.props.renderCloseButton() }
+        { this.state.showCloseButton && this.state.renderCloseButton() }
       </Animated.View>
     )
   }

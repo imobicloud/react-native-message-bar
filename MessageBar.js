@@ -179,7 +179,7 @@ class MessageBar extends Component {
       
       /* Show the close button */
       showCloseButton: props.showCloseButton || false,
-      renderCloseButton: props.renderCloseButton || () => null
+      renderCloseButton: props.renderCloseButton || (() => null)
       
     }
   }

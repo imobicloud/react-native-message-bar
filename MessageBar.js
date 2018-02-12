@@ -175,7 +175,10 @@ class MessageBar extends Component {
 
       /* Position of the alert and Animation Type the alert is shown */
       position: props.position || def.position || 'top',
-      animationType: props.animationType || def.animationType
+      animationType: props.animationType || def.animationType,
+      
+      /* Show the close button */
+      showCloseButton: props.showCloseButton || false
     }
   }
 
@@ -479,6 +482,7 @@ class MessageBar extends Component {
             </View>
           </View>
         </TouchableOpacity>
+        { this.state.showCloseButton && this.props.renderCloseButton() }
       </Animated.View>
     )
   }
